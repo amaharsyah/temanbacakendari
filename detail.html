@@ -1,0 +1,203 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail Buku — Teman Baca Kendari</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b1220;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#166534;
+      --accentDark:#14532d;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:800px;margin:0 auto;padding:18px}
+    .top{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter: blur(8px);
+      border-bottom:1px solid var(--line);padding:14px 18px;margin:-18px -18px 16px;
+      z-index:10;
+    }
+    .brand{display:flex;gap:10px;align-items:center;min-width:0}
+    .mark{width:36px;height:36px;border-radius:12px;background:var(--accent);flex:0 0 auto}
+    .brand b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand span{display:block;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:10px 12px;border-radius:12px;border:1px solid var(--line);
+      background:var(--accent);color:#fff;font-weight:700;cursor:pointer;white-space:nowrap;
+    }
+    .btn.ghost{background:#fff;color:var(--text)}
+    .btn:hover{background:var(--accentDark);border-color:var(--accentDark)}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:16px}
+    .row{display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:start}
+    .row > div:first-child{display:flex;justify-content:center}
+    .cover{margin:0 auto;
+      width:100%;
+      aspect-ratio:3/4;
+      border-radius:14px;
+      background:#f9fafb;border:1px solid var(--line);
+      overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .cover img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0 0 6px;font-size:20px;line-height:1.25}
+    .meta{font-size:13px;color:var(--muted);line-height:1.6}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .tag{font-size:11px;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:#fff}
+    .badgeRow{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .pill{font-size:10px;padding:5px 7px;border-radius:999px;border:1px solid var(--line);line-height:1.2;white-space:nowrap}
+    .pill.rec{background:#ecfdf5;color:var(--accentDark)}
+    .pill.on{border-color:#c7f9d4;background:#effdf4;color:#166534}
+    .pill.off{border-color:#ffd1d8;background:#fff1f2;color:#9f1239}
+    .section{margin-top:12px}
+    .section h2{margin:0 0 6px;font-size:13px;letter-spacing:.2px}
+    .desc{font-size:14px;line-height:1.7;color:#111827}
+    .footer{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;color:var(--muted);font-size:12px}
+    @media (max-width:560px){
+      .row{grid-template-columns:1fr}
+      .cover{margin:0 auto;max-width:220px}
+    }
+  
+    .top{background:linear-gradient(180deg, rgba(22,101,52,.08), rgba(255,255,255,.92))}
+    .icon{width:16px;height:16px;display:inline-block;vertical-align:middle;color:var(--accent)}
+    .meta b{color:var(--accentDark)}
+
+</style>
+</head>
+<body>
+
+  <!-- Icon set -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2V5a2 2 0 0 1 1-2Zm1 4h10v2H7V7Zm0 4h10v2H7v-2Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.7 14.9L2 22l5.3-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20Zm4.5-5.2c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.6.1l-.6.7c-.2.2-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3.2-.4 0-.1 0-.3-.1-.4l-.7-1.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.3.1.1 1.6 2.5 4 3.6.6.3 1 .5 1.3.6.6.2 1.1.2 1.5.1.5-.1 1.3-.6 1.5-1.1.2-.5.2-.9.1-1Z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16.2-3.5-3.5 1.4-1.4L9 13.4l8.1-8.1 1.4 1.4L9 16.2Z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><path fill="currentColor" d="M11 10h2v7h-2v-7Zm0-3h2v2h-2V7Zm1 15A10 10 0 1 1 12 2a10 10 0 0 1 0 20Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 17.3-6.2 3.6 1.7-7.1L2 8.9l7.3-.6L12 1.7l2.7 6.6 7.3.6-5.5 4.9 1.7 7.1L12 17.3Z"/></symbol>
+  </svg>
+
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <b><svg class="icon"><use href="#i-book"></use></svg> Teman Baca Kendari</b>
+          <span><svg class="icon"><use href="#i-info"></use></svg> Detail buku</span>
+        </div>
+      </div>
+      <a class="btn ghost" href="index.html">← Kembali ke Katalog</a>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div class="cover" id="coverBox">
+          <div style="color:var(--muted);font-size:12px">No cover</div>
+        </div>
+
+        <div>
+          <h1 id="title">-</h1>
+          <div class="meta" id="meta">-</div>
+
+          <div class="badgeRow" id="badges"></div>
+          <div class="tags" id="tags"></div>
+
+          <div class="section">
+            <h2><svg class="icon"><use href="#i-info"></use></svg> Resensi</h2>
+            <div class="desc" id="blurb">-</div>
+          </div>
+
+          <div style="height:12px"></div>
+          <a class="btn" id="ctaWa" target="_blank" rel="noopener"><svg class="icon" style="color:#fff"><use href="#i-wa"></use></svg> Pinjam via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Biaya sewa: Rp 15.000 / buku / minggu</div>
+      <div>Palm Mas Residence, Kendari • WA 0813-1556-524</div>
+    </div>
+  </div>
+
+  <script src="./books.js"></script>
+  <script>
+    const WHATSAPP_NUMBER = "628131556524";
+    const wa = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+    function qp(name){
+      const u = new URL(window.location.href);
+      return u.searchParams.get(name);
+    }
+
+    const id = qp("id");
+    const books = Array.isArray(window.BOOKS) ? window.BOOKS : [];
+    const b = books.find(x => String(x.id) === String(id));
+
+    if (!b){
+      document.getElementById("title").textContent = "Buku tidak ditemukan";
+      document.getElementById("meta").textContent = "Cek kembali link atau kembali ke katalog.";
+      document.getElementById("blurb").textContent = "-";
+      document.getElementById("ctaWa").href = wa(encodeURIComponent("Halo temanbacakendari, Saya mau tanya soal sewa buku."));
+    } else {
+      document.title = `${b.title} — Teman Baca Kendari`;
+      document.getElementById("title").textContent = b.title || "-";
+
+      const year = b.year ? b.year : "-";
+      document.getElementById("meta").innerHTML = `<b>Penulis:</b> ${b.author || "-"}<br/><b>Tahun:</b> ${year}`;
+
+      // cover
+      if (b.cover){
+        const img = document.createElement("img");
+        img.alt = `Cover ${b.title}`;
+        img.loading = "lazy";
+        img.src = b.cover;
+        const box = document.getElementById("coverBox");
+        box.innerHTML = "";
+        box.appendChild(img);
+      }
+
+      // badges
+      const badges = document.getElementById("badges");
+      badges.innerHTML = "";
+      if (b.recommended){
+        const s = document.createElement("span");
+        s.className = "pill rec";
+        s.textContent = "⭐ Recommended";
+        badges.appendChild(s);
+      }
+      const a = document.createElement("span");
+      a.className = "pill " + (b.available ? "on" : "off");
+      a.textContent = b.available ? "Tersedia" : "Dipinjam";
+      badges.appendChild(a);
+
+      // tags
+      const tags = document.getElementById("tags");
+      (b.genres || []).forEach(g => {
+        const t = document.createElement("span");
+        t.className = "tag";
+        t.textContent = g;
+        tags.appendChild(t);
+      });
+
+      document.getElementById("blurb").textContent = b.blurb || "-";
+
+      const msg = encodeURIComponent(
+        `Halo temanbacakendari! Saya mau pinjam buku:\n` +
+        `- Judul: ${b.title}\n` +
+        `- Penulis: ${b.author}\n` +
+        `- Kode: ${b.id}\n` +
+        `Durasi sewa (minggu): \n` +
+        `Metode: ambil / antar: `
+      );
+      document.getElementById("ctaWa").href = wa(msg);
+    }
+  </script>
+</body>
+</html>
