@@ -1303,8 +1303,8 @@ window.BOOKS = [
     "available": true,
     "recommended": false,
     "blurb": "Latihan sederhana untuk melatih daya ingat—berguna untuk belajar dan aktivitas harian.",
-    "id": "BK100"
-  },
+   "id": "BK100"
+},
   {
     "title": "101 Creative Notes",
     "author": "Yoris Sebastian",
@@ -1312,7 +1312,7 @@ window.BOOKS = [
       "Kreativitas"
     ],
     "year": "",
-    "cover": "temanbacakendari/covers/101-creative-notes.jpg.jpg",
+    "cover": "covers/101-creative-notes.jpg.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Catatan singkat tentang kreativitas: cara menangkap ide, melihat peluang, dan mengeksekusi.",
