@@ -311,7 +311,7 @@ window.BOOKS = [
       "Bisnis"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/beobses.jpg",
     "available": false,
     "recommended": false,
     "blurb": "Motivasi eksekusi tinggi untuk mengejar target besar lewat fokus, energi, dan keberanian mengambil peluang.",
@@ -545,7 +545,7 @@ window.BOOKS = [
       "Self Development"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/awaken.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Motivasi perubahan diri: mengelola emosi, kebiasaan, dan keputusan untuk hidup yang lebih terarah.",
