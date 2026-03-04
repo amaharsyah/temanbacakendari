@@ -1312,7 +1312,7 @@ window.BOOKS = [
       "Kreativitas"
     ],
     "year": "",
-    "cover: "covers/101-creative-notes.jpg",
+    "cover: "covers/101-creative-notes.jpg.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Catatan singkat tentang kreativitas: cara menangkap ide, melihat peluang, dan mengeksekusi.",
