@@ -558,7 +558,7 @@ window.BOOKS = [
       "Produktivitas"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/10x.jpg",
     "available": true,
     "recommended": true,
     "blurb": "Kerangka berpikir 10x: eliminasi hal tidak penting dan bangun sistem untuk lompatan besar.",
