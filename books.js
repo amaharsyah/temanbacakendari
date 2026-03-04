@@ -467,7 +467,7 @@ window.BOOKS = [
       "Investasi"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/anamuda.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Motivasi eksekusi tinggi untuk mengejar target besar lewat fokus, energi, dan keberanian mengambil peluang.",
@@ -480,7 +480,7 @@ window.BOOKS = [
       "Self Development"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/12rules.jpg",
     "available": true,
     "recommended": true,
     "blurb": "Kumpulan prinsip hidup: tanggung jawab, makna, dan kebiasaan membangun karakter yang kuat.",
@@ -831,7 +831,7 @@ window.BOOKS = [
       "Klasik"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/around.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Klasik petualangan keliling dunia penuh kejutan, tantangan, dan ritme cerita cepat.",
@@ -1000,7 +1000,7 @@ window.BOOKS = [
       "Novel Indonesia"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/anakrantau.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Kisah perantauan, keluarga, dan pencarian jati diri—hangat, inspiratif, dan dekat dengan realita.",
@@ -1013,7 +1013,7 @@ window.BOOKS = [
       "Novel Indonesia"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/99cahaya.jpg",
     "available": true,
     "recommended": false,
     "blurb": "Perjalanan dan refleksi menapak jejak sejarah; memadukan kisah, budaya, dan renungan personal.",
@@ -1026,7 +1026,7 @@ window.BOOKS = [
       "Novel Indonesia"
     ],
     "year": "",
-    "cover": "",
+    "cover": "covers/apitauhid.png",
     "available": true,
     "recommended": false,
     "blurb": "Novel religi-historis dengan nilai keteladanan dan pesan moral yang kuat.",
